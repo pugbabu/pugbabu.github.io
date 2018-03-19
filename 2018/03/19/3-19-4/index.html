@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>如何解决浏览器兼容性问题 | 天龙巴布</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="普及：浏览器的兼容性问题，往往是个别浏览器（没错，就是那个与众不同的浏览器）对于一些标准的定义不一致导致的。没有IE就没有伤害。">
+<meta name="keywords" content="HTML,CSS,JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何解决浏览器兼容性问题">
+<meta property="og:url" content="http://www.91pug.com/2018/03/19/3-19-4/index.html">
+<meta property="og:site_name" content="天龙巴布">
+<meta property="og:description" content="普及：浏览器的兼容性问题，往往是个别浏览器（没错，就是那个与众不同的浏览器）对于一些标准的定义不一致导致的。没有IE就没有伤害。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-19T12:42:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何解决浏览器兼容性问题">
+<meta name="twitter:description" content="普及：浏览器的兼容性问题，往往是个别浏览器（没错，就是那个与众不同的浏览器）对于一些标准的定义不一致导致的。没有IE就没有伤害。">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/bitbug2.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">天龙巴布</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">主页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.jpeg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">主页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.jpeg" />
+            <h2 id="name">天龙巴布</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/pugbabu/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                6
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                4
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/pugbabu/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="weixin" class=tooltip>
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/u/5684093068" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-3-19-4" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            如何解决浏览器兼容性问题
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/03/19/3-19-4/">
+            <time datetime="2018-03-19T12:22:28.000Z" itemprop="datePublished">2018-03-19</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/前端/">前端</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CSS/">CSS</a>, <a class="tag-link" href="/tags/HTML/">HTML</a>, <a class="tag-link" href="/tags/JS/">JS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>普及</strong>：浏览器的兼容性问题，往往是个别浏览器（没错，就是那个与众不同的浏览器）对于一些标准的定义不一致导致的。没有IE就没有伤害。<a id="more"></a></p>
+<h2 id="Normalize-css"><a href="#Normalize-css" class="headerlink" title="Normalize.css"></a>Normalize.css</h2><p>不同浏览器的默认样式存在差异，可以使用 <code>Normalize.css</code> 抹平这些差异。当然，你也可以定制属于自己业务的 <code>reset.css</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=<span class="string">"https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>简单粗暴法(不推荐)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* &#123; margin: 0; padding: 0; &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="html5shiv-js"><a href="#html5shiv-js" class="headerlink" title="html5shiv.js"></a>html5shiv.js</h2><p>解决 ie9 以下浏览器对 html5 新增标签不识别的问题。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[<span class="keyword">if</span> lt IE 9]&gt;</span><br><span class="line">  &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="respond-js"><a href="#respond-js" class="headerlink" title="respond.js"></a>respond.js</h2><p>解决 ie9 以下浏览器不支持 CSS3 Media Query 的问题。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="picturefill-js"><a href="#picturefill-js" class="headerlink" title="picturefill.js"></a>picturefill.js</h2><p>解决 IE 9 10 11 等浏览器不支持 <picture> 标签的问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.bootcss.com/picturefill/3.0.3/picturefill.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></picture></p>
+<h2 id="浏览器-CSS-兼容前缀"><a href="#浏览器-CSS-兼容前缀" class="headerlink" title="浏览器 CSS 兼容前缀"></a>浏览器 CSS 兼容前缀</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-o-transform:rotate(7deg); // Opera</span><br><span class="line">-ms-transform:rotate(7deg); // IE</span><br><span class="line">-moz-transform:rotate(7deg); // Firefox</span><br><span class="line">-webkit-transform:rotate(7deg); // Chrome</span><br><span class="line">transform:rotate(7deg); // 统一标识语句</span><br></pre></td></tr></table></figure>
+<h2 id="清除浮动-最佳实践"><a href="#清除浮动-最佳实践" class="headerlink" title="清除浮动 最佳实践"></a>清除浮动 最佳实践</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.fl &#123; <span class="built_in">float</span>: left; &#125;</span><br><span class="line">.fr &#123; <span class="built_in">float</span>: right; &#125;</span><br><span class="line">.clearfix:after &#123; display: block; clear: both; content: <span class="string">""</span>; visibility: hidden; height: 0; &#125;</span><br><span class="line">.clearfix &#123; zoom: 1; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="BFC-解决边距重叠问题"><a href="#BFC-解决边距重叠问题" class="headerlink" title="BFC 解决边距重叠问题"></a>BFC 解决边距重叠问题</h2><p>当相邻元素都设置了 margin 边距时，margin 将取最大值，舍弃小值。为了不让边距重叠，可以给子元素加一个父元素，并设置该父元素为 BFC：overflow: hidden;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=<span class="string">"box"</span> id=<span class="string">"box"</span>&gt;</span><br><span class="line">  &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;</span><br><span class="line">  &lt;div style=<span class="string">"overflow: hidden;"</span>&gt;</span><br><span class="line">    &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;p&gt;Lorem ipsum dolor sit.&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="解决-IE9-以下浏览器不能使用-opacity"><a href="#解决-IE9-以下浏览器不能使用-opacity" class="headerlink" title="解决 IE9 以下浏览器不能使用 opacity"></a>解决 IE9 以下浏览器不能使用 opacity</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">opacity: 0.5;</span><br><span class="line">filter: alpha(opacity = 50);</span><br><span class="line">filter: progid:DXImageTransform.Microsoft.Alpha(style = 0, opacity = 50);</span><br></pre></td></tr></table></figure>
+<h2 id="td-自动换行的问题"><a href="#td-自动换行的问题" class="headerlink" title="td 自动换行的问题"></a>td 自动换行的问题</h2><p>问题：<code>table</code> 宽度固定，<code>td</code> 自动换行<br>解决：设置 <code>Table</code> 为 <code>table-layout: fixed</code>，<code>td</code> 为 <code>word-wrap: break-word</code></p>
+<h2 id="求窗口大小的兼容写法"><a href="#求窗口大小的兼容写法" class="headerlink" title="求窗口大小的兼容写法"></a>求窗口大小的兼容写法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 浏览器窗口可视区域大小（不包括工具栏和滚动条等边线）</span><br><span class="line">// 1600 * 525</span><br><span class="line">var client_w = document.documentElement.clientWidth || document.body.clientWidth;</span><br><span class="line">var client_h = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">// 网页内容实际宽高（包括工具栏和滚动条等边线）</span><br><span class="line">// 1600 * 8</span><br><span class="line">var scroll_w = document.documentElement.scrollWidth || document.body.scrollWidth;</span><br><span class="line">var scroll_h = document.documentElement.scrollHeight || document.body.scrollHeight;</span><br><span class="line">// 网页内容实际宽高 (不包括工具栏和滚动条等边线）</span><br><span class="line">// 1600 * 8</span><br><span class="line">var offset_w = document.documentElement.offsetWidth || document.body.offsetWidth;</span><br><span class="line">var offset_h = document.documentElement.offsetHeight || document.body.offsetHeight;</span><br><span class="line">// 滚动的高度</span><br><span class="line">var scroll_Top = document.documentElement.scrollTop||document.body.scrollTop;</span><br></pre></td></tr></table></figure>
+<h2 id="键盘事件-keyCode-兼容性写法"><a href="#键盘事件-keyCode-兼容性写法" class="headerlink" title="键盘事件 keyCode 兼容性写法"></a>键盘事件 keyCode 兼容性写法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var inp = document.getElementById(<span class="string">'inp'</span>)</span><br><span class="line">var result = document.getElementById(<span class="string">'result'</span>)</span><br><span class="line"><span class="keyword">function</span> getKeyCode(e) &#123;</span><br><span class="line">  e = e ? e : (window.event ? window.event : <span class="string">""</span>)</span><br><span class="line">  <span class="built_in">return</span> e.keyCode ? e.keyCode : e.which</span><br><span class="line">&#125;</span><br><span class="line">inp.onkeypress = <span class="keyword">function</span>(e) &#123;</span><br><span class="line">  result.innerHTML = getKeyCode(e)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="DOM-事件处理程序的兼容写法（能力检测）"><a href="#DOM-事件处理程序的兼容写法（能力检测）" class="headerlink" title="DOM 事件处理程序的兼容写法（能力检测）"></a>DOM 事件处理程序的兼容写法（能力检测）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">var eventshiv = &#123;</span><br><span class="line">    // event兼容</span><br><span class="line">    getEvent: <span class="keyword">function</span>(event) &#123;</span><br><span class="line">        <span class="built_in">return</span> event ? event : window.event;</span><br><span class="line">    &#125;,</span><br><span class="line">    // <span class="built_in">type</span>兼容</span><br><span class="line">    getType: <span class="keyword">function</span>(event) &#123;</span><br><span class="line">        <span class="built_in">return</span> event.type;</span><br><span class="line">    &#125;,</span><br><span class="line">    // target兼容</span><br><span class="line">    getTarget: <span class="keyword">function</span>(event) &#123;</span><br><span class="line">        <span class="built_in">return</span> event.target ? event.target : event.srcelem;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 添加事件句柄</span><br><span class="line">    addHandler: <span class="keyword">function</span>(elem, <span class="built_in">type</span>, listener) &#123;</span><br><span class="line">        <span class="keyword">if</span> (elem.addEventListener) &#123;</span><br><span class="line">            elem.addEventListener(<span class="built_in">type</span>, listener, <span class="literal">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (elem.attachEvent) &#123;</span><br><span class="line">            elem.attachEvent(<span class="string">'on'</span> + <span class="built_in">type</span>, listener);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            // 在这里由于.与<span class="string">'on'</span>字符串不能链接，只能用 []</span><br><span class="line">            elem[<span class="string">'on'</span> + <span class="built_in">type</span>] = listener;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 移除事件句柄</span><br><span class="line">    removeHandler: <span class="keyword">function</span>(elem, <span class="built_in">type</span>, listener) &#123;</span><br><span class="line">        <span class="keyword">if</span> (elem.removeEventListener) &#123;</span><br><span class="line">            elem.removeEventListener(<span class="built_in">type</span>, listener, <span class="literal">false</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (elem.detachEvent) &#123;</span><br><span class="line">            elem.detachEvent(<span class="string">'on'</span> + <span class="built_in">type</span>, listener);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            elem[<span class="string">'on'</span> + <span class="built_in">type</span>] = null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 添加事件代理</span><br><span class="line">    addAgent: <span class="keyword">function</span> (elem, <span class="built_in">type</span>, agent, listener) &#123;</span><br><span class="line">        elem.addEventListener(<span class="built_in">type</span>, <span class="keyword">function</span> (e) &#123;</span><br><span class="line">            <span class="keyword">if</span> (e.target.matches(agent)) &#123;</span><br><span class="line">                listener.call(e.target, e); // this 指向 e.target</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    // 取消默认行为</span><br><span class="line">    preventDefault: <span class="keyword">function</span>(event) &#123;</span><br><span class="line">        <span class="keyword">if</span> (event.preventDefault) &#123;</span><br><span class="line">            event.preventDefault();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            event.returnValue = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 阻止事件冒泡</span><br><span class="line">    stopPropagation: <span class="keyword">function</span>(event) &#123;</span><br><span class="line">        <span class="keyword">if</span> (event.stopPropagation) &#123;</span><br><span class="line">            event.stopPropagation();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.91pug.com/2018/03/19/3-19-4/" data-id="cjey8cvz9000299ett4k0yxfg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/03/19/3-19-3/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/3-19-4/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/3-19-4/" class="title">如何解决浏览器兼容性问题</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T12:22:28.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/3-19-3/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/3-19-3/" class="title">最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T09:44:20.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/3-19-2/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/3-19-2/" class="title">前端性能优化之加载技术</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T09:01:32.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/3-19-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
+                            <p class="item-title"><a href="/2018/03/19/3-19-1/" class="title">佛系程序员的月薪五万指南</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T08:00:51.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/hhah/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/hhah/" class="title">我是谁</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T06:46:50.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">文章分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 pugbabu<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

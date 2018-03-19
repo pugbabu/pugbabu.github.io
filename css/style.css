@@ -1018,16 +1018,16 @@ a.article-title:hover {
 }
 .article-more-link a {
   display: inline-block;
-  line-height: 1em;
-  padding: 6px 15px;
+  line-height: 1.2em;
+  padding: 6px 20px;
   border-radius: 15px;
-  background: #f5f8f9;
-  color: #999;
+  color: #000;
   text-shadow: 0 1px #fff;
   text-decoration: none;
+  border: 1px solid #1cbf43;
 }
 .article-more-link a:hover {
-  background: #38b7ea;
+  background: #1cbf43;
   color: #fff;
   text-decoration: none;
   text-shadow: 0 1px #169cd2;
