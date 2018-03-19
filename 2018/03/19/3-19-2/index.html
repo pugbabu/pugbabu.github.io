@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>前端性能优化之加载技术 | 天龙巴布</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="在这个前端用户体验越来越重要的时代，你的页面稍微有点卡顿，都难以挽留用户。而作为一名有追求的前端，势必要力所能及地优化我们前端页面的性能。今天，就来谈一谈那些前端性能优化的加载技术，利用这些技术可以很好地提高网站的响应速度和用户体验。">
+<meta name="keywords" content="性能优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端性能优化之加载技术">
+<meta property="og:url" content="http://www.91pug.com/2018/03/19/3-19-2/index.html">
+<meta property="og:site_name" content="天龙巴布">
+<meta property="og:description" content="在这个前端用户体验越来越重要的时代，你的页面稍微有点卡顿，都难以挽留用户。而作为一名有追求的前端，势必要力所能及地优化我们前端页面的性能。今天，就来谈一谈那些前端性能优化的加载技术，利用这些技术可以很好地提高网站的响应速度和用户体验。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-19T09:22:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端性能优化之加载技术">
+<meta name="twitter:description" content="在这个前端用户体验越来越重要的时代，你的页面稍微有点卡顿，都难以挽留用户。而作为一名有追求的前端，势必要力所能及地优化我们前端页面的性能。今天，就来谈一谈那些前端性能优化的加载技术，利用这些技术可以很好地提高网站的响应速度和用户体验。">
+    
+
+    
+
+    
+        <link rel="icon" href="/css/images/bitbug2.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">天龙巴布</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">主页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.jpeg" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">主页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.jpeg" />
+            <h2 id="name">天龙巴布</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>HangZhou, China</span>
+            <a id="follow" target="_blank" href="https://github.com/pugbabu/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                4
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                2
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/pugbabu/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="weixin" class=tooltip>
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://weibo.com/u/5684093068" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-3-19-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            前端性能优化之加载技术
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/03/19/3-19-2/">
+            <time datetime="2018-03-19T09:01:32.000Z" itemprop="datePublished">2018-03-19</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/前端/">前端</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/性能优化/">性能优化</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>在这个前端用户体验越来越重要的时代，你的页面稍微有点卡顿，都难以挽留用户。而作为一名有追求的前端，势必要力所能及地优化我们前端页面的性能。今天，就来谈一谈那些前端性能优化的加载技术，利用这些技术可以很好地提高网站的响应速度和用户体验。<a id="more"></a></p>
+<h2 id="页面渲染"><a href="#页面渲染" class="headerlink" title="页面渲染"></a>页面渲染</h2><p>在理解真正的优化技术之前，我们需要先了解为什么需要优化？这得从浏览器的渲染引擎谈起。浏览器从获取HTML文档开始，就进入了渲染引擎的工作阶段，其目的是将网页的内容显示在浏览器屏幕上。大体可以描述为从解析HTML内容，构造DOM节点再到DOM元素布局定位最后再绘制DOM元素的这样一个过程。<br>在页面渲染的这样一个过程中，有一个关键点是如果在解析内容的过程中遇到了脚本标签，如：<code>&lt;script src=&quot;example.js&quot;&gt;&lt;/script&gt;</code>，浏览器就会暂停内容的解析，转而开始下载脚本。并且只有等脚本下载完并执行结束后，渲染引擎才会继续解析。那么这样一来，页面显示的时间必然会被延长。因此我们需要优化的点就是尽可能地让页面更早地被渲染出来。</p>
+<h2 id="脚本加载的优化"><a href="#脚本加载的优化" class="headerlink" title="脚本加载的优化"></a>脚本加载的优化</h2><p>要解决上面说到的脚本加载问题，通常有三种解决方案：将脚本放在HTML末尾、动态加载脚本以及异步加载脚本。最常用的应该就是将所有脚本放置在HTML文档的末尾了。这应该是每个前端刚入门时，被教的最多的。对于这个方法，这里就不多做介绍，直接上重头戏。</p>
+<h4 id="动态加载"><a href="#动态加载" class="headerlink" title="动态加载"></a>动态加载</h4><p>所谓动态加载脚本就是利用javascript代码来加载脚本，通常是手工创建script元素，然后等到HTML文档解析完毕后插入到文档中去。这样就可以很好地控制脚本加载的时机，从而避免阻塞问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function loadJS(src) &#123;</span><br><span class="line">  const script = document.createElement(&apos;script&apos;);</span><br><span class="line">  script.src = src;</span><br><span class="line">  document.getElementsByTagName(&apos;head&apos;)[0].appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line">loadJS(&apos;http://example.com/scq000.js&apos;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h4><p>我们都知道，在计算机程序中同步的模式会产生阻塞问题。所以为了解决同步解析脚本会阻塞浏览器渲染的问题，采用异步加载脚本就成为了一种好的选择。利用脚本的async和defer属性就可以实现这种需求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;./a.js&quot; async&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;./b.js&quot; defer&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>虽然利用了这两个属性的script标签都可以实现异步加载，同时不阻塞脚本解析。但是使用async属性的脚本执行顺序是不能得到保证的。而使用defer属性的脚本执行顺序可以得到保证。另一方面，defer属性是在html文档解析完成后，DOMContentLoaded事件之前就会执行js。async一旦加载完js后就会马上执行，最迟不超过window.onload事件。所以，如果脚本没有操作DOM等元素，或者与DOM时候加载完成无关，直接使用async脚本就好。如果需要DOM，就只能使用defer了。<br>这里介绍的两种方法在实际运用过程中需要权衡一下的，渲染速度变快也就意味着脚本加载时间会变长。</p>
+<h4 id="解决异步加载脚本的问题"><a href="#解决异步加载脚本的问题" class="headerlink" title="解决异步加载脚本的问题"></a>解决异步加载脚本的问题</h4><p>上面介绍的异步加载脚本并不是十分完美的。如何处理加载过程中这些脚本的互相依赖关系，就成了实现异步加载过程中所需要考虑的问题。一方面，对于页面中那些独立的脚本，如用户统计等插件就可以放心大胆地使用异步加载。而另一方面，对于那些确实需要处理依赖关系的脚本，业界已经有很成熟的解决方案了。如采用AMD规范的RequireJS,甚至有采用了hack技术（通过欺骗浏览器下载但不执行脚本)的labjs（已过时)。如果你熟悉promise的话，就知道这是在JS中处理异步的一种强有力的工具。下面以promise技术来实现处理异步脚本加载过程中的依赖问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// 执行脚本</span><br><span class="line">function exec(src) &#123;</span><br><span class="line">    const script = document.createElement(&apos;script&apos;);</span><br><span class="line">    script.src = src;</span><br><span class="line"></span><br><span class="line">      // 返回一个独立的promise</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">        var done = false;</span><br><span class="line"></span><br><span class="line">        script.onload = script.onreadystatechange = () =&gt; &#123;</span><br><span class="line">            if (!done &amp;&amp; (!script.readyState || script.readyState === &quot;loaded&quot; || script.readyState === &quot;complete&quot;)) &#123;</span><br><span class="line">              done = true;</span><br><span class="line"></span><br><span class="line">              // 避免内存泄漏</span><br><span class="line">              script.onload = script.onreadystatechange = null;</span><br><span class="line">              resolve(script);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        script.onerror = reject;</span><br><span class="line">        document.getElementsByTagName(&apos;head&apos;)[0].appendChild(script);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function asyncLoadJS(dependencies) &#123;</span><br><span class="line">    return Promise.all(dependencies.map(exec));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asyncLoadJS([&apos;https://code.jquery.com/jquery-2.2.1.js&apos;, &apos;https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js&apos;]).then(() =&gt; console.log(&apos;all done&apos;));</span><br></pre></td></tr></table></figure></p>
+<p>可以看到，我们针对每个脚本依赖都会创建一个promise对象来管理其状态。采用动态插入脚本的方式来管理脚本，然后利用脚本onload和onreadystatechange(兼容性处理)事件来监听脚本是否加载完成。一旦加载完毕，就会触发promise的resovle方法。最后，针对依赖的处理，是promise的all方法，这个方法只有在所有promise对象都resolved的时候才会触发resolve方法，这样一来，我们就可以确保在执行回调之前，所有依赖的脚本都已经加载并执行完毕。</p>
+<h2 id="懒加载-lazyload"><a href="#懒加载-lazyload" class="headerlink" title="懒加载(lazyload)"></a>懒加载(lazyload)</h2><p>懒加载是一种按需加载的方式，也通常被称为延迟加载。主要思想是通过延迟相关资源的加载，从而提高页面的加载和响应速度。在这里主要介绍两种实现懒加载的技术：虚拟代理技术以及惰性初始化技术。</p>
+<h4 id="虚拟代理加载"><a href="#虚拟代理加载" class="headerlink" title="虚拟代理加载"></a>虚拟代理加载</h4><p>所谓虚拟代理加载，即为真正加载的对象事先提供一个代理或者说占位符。最常见的场景是在图片的懒加载中，先用一种loading的图片占位，然后再用异步的方式加载图片。等真正图片加载完成后就填充进图片节点中去。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 页面中的图片url事先先存在其data-src属性上</span><br><span class="line">const lazyLoadImg = function() &#123;</span><br><span class="line">  const images = document.getElementsByTagName(&apos;img&apos;);</span><br><span class="line">  for(let i = 0; i &lt; images.length; i++) &#123;</span><br><span class="line">      if(images[i].getAttribute(&apos;data-src&apos;)) &#123;</span><br><span class="line">          images[i].setAttribute(&apos;src&apos;, images[i].getAttribute(&apos;data-src&apos;));</span><br><span class="line">          images[i].onload = () =&gt; images[i].removeAttribute(&apos;data-src&apos;);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="惰性初始化"><a href="#惰性初始化" class="headerlink" title="惰性初始化"></a>惰性初始化</h4><p>惰性初始模式是在程序设计过程中常用的一种设计模式。顾名思义，这个模式就是一种将代码初始化的时机推迟（特别是那些初始化消耗较大的资源），从而来提升性能的技术。<br>jQuery中大名鼎鼎的ready方法就用到了这项技术，其目的是为了在页面DOM元素加载完成后就可以做相应的操作，而不需要等待所有资源加载完毕后。与浏览器中原生的onload事件相比，可以更加提前地介入对DOM的干涉。当页面中包含大量图片等资源时，这个方法就显出它的好处了。在jQuery内部的实现原理上，它会设置一个标志位来判断页面是否加载完毕，如果没有加载完成，会将要执行的函数缓存起来。当页面加载完毕后，再一一执行。这样一来，就将原本应该马上执行的代码，延迟到页面加载完毕后再执行。感兴趣的可以去阅读这一部分的源码，里面还包括了浏览器兼容等处理。</p>
+<h4 id="选择时机"><a href="#选择时机" class="headerlink" title="选择时机"></a>选择时机</h4><p>选择时机：比较常见的两种</p>
+<p>滚动条监听<br>事件回调（需要用户交互的地方）<br>当然，你也可以根据具体的业务场景选择延迟加载的时机。</p>
+<h5 id="滚动条监听"><a href="#滚动条监听" class="headerlink" title="滚动条监听"></a>滚动条监听</h5><p>滚动条监听，常常用在大型图片流等场景下。通过对用户滚动结束的区域进行计算，从而只加载目标区域中的资源。这样就可以实现节流的目的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">// 简单的节流函数</span><br><span class="line">function throttle(func, wait, mustRun) &#123;</span><br><span class="line">    var timeout,</span><br><span class="line">        startTime = new Date();</span><br><span class="line"></span><br><span class="line">    return function() &#123;</span><br><span class="line">        var context = this,</span><br><span class="line">            args = arguments,</span><br><span class="line">            curTime = new Date();</span><br><span class="line"></span><br><span class="line">        clearTimeout(timeout);</span><br><span class="line">        // 如果达到了规定的触发时间间隔，触发 handler</span><br><span class="line">        if(curTime - startTime &gt;= mustRun)&#123;</span><br><span class="line">            func.apply(context,args);</span><br><span class="line">            startTime = curTime;</span><br><span class="line">        // 没达到触发间隔，重新设定定时器</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            timeout = setTimeout(func, wait);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 判断元素是否在可视范围内</span><br><span class="line">function elementInViewport(element) &#123;</span><br><span class="line">    const rect = element.getBoundingClientRect();</span><br><span class="line">    return (rect.top &gt;= 0 &amp;&amp; rect.left &gt;= 0 &amp;&amp; rect.top &lt;= (window.innerHeight || document.documentElement.clientHeight));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function lazyLoadImgs() &#123;</span><br><span class="line">    const count = 0;</span><br><span class="line">      return function() &#123;</span><br><span class="line">          [].slice.call(images, count).forEach(image =&gt; &#123;</span><br><span class="line">              if(elementInViewport(elementInViewport(image))) &#123;</span><br><span class="line">                image.setAttribute(&apos;src&apos;, image.getAttribute(&apos;data-src&apos;));</span><br><span class="line">                  count++;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const images = document.getElementByTagName(&apos;img&apos;);</span><br><span class="line">// 采用了节流函数, 加载图片</span><br><span class="line">window.addEventListener(&apos;scroll&apos;,throttle(lazyLoadImgs(images),500,1000));</span><br></pre></td></tr></table></figure></p>
+<h5 id="事件回调"><a href="#事件回调" class="headerlink" title="事件回调"></a>事件回调</h5><p>这种场景就是那些需要用户交互的地方，如点击加载更多之类的。这些资源往往通过在用户交互的瞬间（如点击一个触发按钮），发起ajax请求来获取资源。</p>
+<h2 id="利用webpack实现脚本加载优化"><a href="#利用webpack实现脚本加载优化" class="headerlink" title="利用webpack实现脚本加载优化"></a>利用webpack实现脚本加载优化</h2><p>现如今，对于大型项目大家都会用上打包工具。现代化的工具使得我们不必再写那些又长又难懂的代码。针对懒加载，webpack也提供了十分友好的支持。这里主要介绍两种方式。</p>
+<h4 id="import-方法"><a href="#import-方法" class="headerlink" title="import()方法"></a>import()方法</h4><p>我们知道，在原生es6的语法中，提供了import和export的方式来管理模块。而其import关键字是被设置成静态的，因此不支持动态绑定。不过在es6的stage 3规范中，引入了一个新的方法import()使得动态加载模块成为可能。所以，你可以在项目中使用这样的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#button&apos;).click(function() &#123;</span><br><span class="line">  import(&apos;./dialog.js&apos;)</span><br><span class="line">    .then(dialog =&gt; &#123;</span><br><span class="line">        //do something</span><br><span class="line">    &#125;)</span><br><span class="line">    .catch(err =&gt; &#123;</span><br><span class="line">        console.log(&apos;模块加载错误&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//或者更优雅的写法</span><br><span class="line">$(&apos;#button&apos;).click(async function() &#123;</span><br><span class="line">    const dialog = await import(&apos;./dialog.js&apos;);</span><br><span class="line">  //do something with dialog</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>由于该语法是基于promise的，所以如果需要兼容旧浏览器，请确保在项目中使用<code>es6-promise</code>或者<code>promise-polyfill</code>。同时，如果使用的是<code>babel</code>，需要添加<code>syntax-dynamic-import</code>插件。</p>
+<h4 id="require-ensure"><a href="#require-ensure" class="headerlink" title="require.ensure"></a>require.ensure</h4><p>require.ensure与import()类似，同样也是基于promise的异步加载模块的一种方法。这是在webpack 1.x时代官方提供的懒加载方案。现在，已经被import()语法取代了。为了文章的完整性，这里也做一些介绍。<br>在webpack编译过程中，会静态地解析require.ensure中的模块，并将其添加到一个单独的chunk中，从而实现代码的按需加载。<br>语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require.ensure(dependencies: String[], callback: function(require), errorCallback: function(error), chunkName: String)</span><br></pre></td></tr></table></figure></p>
+<p>一个十分常见的例子是在写单页面应用的时候，使用该技术实现基于不同路由的按需加载：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const routes = [</span><br><span class="line">    &#123;path: &apos;/comment&apos;, component: r =&gt; require.ensure([], r(require(&apos;./Comment&apos;)), &apos;comment&apos;)&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure></p>
+<h2 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h2><p>首屏加载的问题解决后，用户在具体的页面使用过程中的体验也很重要。如果能够通过预判用户的行为，提前加载所需要的资源，则可以快速地响应用户的操作，从而打造更加良好的用户体验。另一方面，通过提前发起网络请求，也可以减少由于网络过慢导致的用户等待时间。因此，“预加载”的技术就闪亮登场了。</p>
+<h4 id="preload规范"><a href="#preload规范" class="headerlink" title="preload规范"></a>preload规范</h4><p><code>preload</code> 是w3c新出的一个标准。利用link的rel属性来声明相关“proload”，从而实现预加载的目的。就像这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;preload&quot; href=&quot;example.js&quot; as=&quot;script&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其中rel属性是用来告知浏览器启用preload功能，而as属性是用来明确需要预加载资源的类型，这个资源类型不仅仅包括js脚本(script)，还可以是图片(image)，css(style)，视频(media)等等。浏览器检测到这个属性后，就会预先加载资源。<br>这个规范目前兼容性方面还不是很好，所以可以先稍微了解一下。</p>
+<h4 id="DNS-Prefetch-预解析"><a href="#DNS-Prefetch-预解析" class="headerlink" title="DNS Prefetch 预解析"></a>DNS Prefetch 预解析</h4><p>还有一个可以优化网页速度的方式是利用dns的预解析技术。同preload类似，DNS Prefetch在网络层面上优化了资源加载的速度。我们知道，针对DNS的前端优化，主要分为减少DNS的请求次数，还有就是进行DNS预先获取。DNS prefetch就是为了实现这后者。其用法也很简单，只要在link标签上加上对应的属性就行了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;x-dns-prefetch-control&quot; content=&quot;on&quot; /&gt; /* 这是用来告知浏览器当前页面要做DNS预解析 */</span><br><span class="line">&lt;link rel=&quot;dns-prefetch&quot; href=&quot;//example.com&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在支持该标准的浏览器上，会自动对链接中的地址域名做DNS解析缓存。不过，像Goolge、火狐这样的现代浏览器即使不设置这个属性，也能在后台做自动预解析。如果你的页面中需要大量访问不同域名的资源，可以利用这项技术加快资源的获取，从而获得更好的用户体验。需要注意的是，DNS预解析虽好，但是也不能滥用。如果对多页面重复DNS预解析，会增加DNS的查询次数。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>通常对于大型应用来说，完整加载所有javascript代码是十分耗时的工作。因此，通常会将JavaScript分为两个部分（一部分是渲染初始化页面所必须的，另一部分则是剩下的脚本）来进行加载。这样就可以尽可能快速地渲染出网页。通过监听onload事件，可以很好地控制回调的时机，同时采用异步加载等技术能够同时并行加载多个脚本，从而大大提高最终页面的渲染速度。最好是把在onload事件之前执行的代码拆分成一个单独的文件。当然，在处理脚本加载这一过程中还存在着几个问题：1.如何找到需要拆分的代码？ 2 怎样处理竞争状态 ？3.如何延迟加载其余部分的代码？希望这篇文章能够给你启发！</p>
+<p>文章出处：<a href="https://juejin.im/post/59b73ef75188253db70acdb5" target="_blank" rel="noopener">https://juejin.im/post/59b73ef75188253db70acdb5</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.91pug.com/2018/03/19/3-19-2/" data-id="cjey0z8dy0004pvetjluqbzx5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/03/19/3-19-1/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">佛系程序员的月薪五万指南</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/3-19-2/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/3-19-2/" class="title">前端性能优化之加载技术</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T09:01:32.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/3-19-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/19/3-19-1/" class="title">佛系程序员的月薪五万指南</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T08:00:51.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/hhah/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/hhah/" class="title">我是谁</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T06:46:50.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/19/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
+                            <p class="item-title"><a href="/2018/03/19/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-03-19T02:06:06.000Z" itemprop="datePublished">2018-03-19</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 pugbabu<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
