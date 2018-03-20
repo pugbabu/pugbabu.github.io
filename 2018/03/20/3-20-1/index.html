@@ -3,19 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>到底是 | 天龙巴布</title>
+    <title>Vue的hash模式、history模式引发的问题 | 天龙巴布</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="是福建省科技单独323">
-<meta property="og:type" content="website">
-<meta property="og:title" content="到底是">
-<meta property="og:url" content="http://www.91pug.com/tags/index.html">
+    <meta name="description" content="前言：vue路由默认hash模式 —— 使用URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue的hash模式、history模式引发的问题">
+<meta property="og:url" content="http://www.91pug.com/2018/03/20/3-20-1/index.html">
 <meta property="og:site_name" content="天龙巴布">
-<meta property="og:description" content="是福建省科技单独323">
+<meta property="og:description" content="前言：vue路由默认hash模式 —— 使用URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-19T08:12:36.000Z">
+<meta property="og:image" content="http://www.91pug.com/images/vue.png">
+<meta property="og:updated_time" content="2018-03-20T02:31:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="到底是">
-<meta name="twitter:description" content="是福建省科技单独323">
+<meta name="twitter:title" content="Vue的hash模式、history模式引发的问题">
+<meta name="twitter:description" content="前言：vue路由默认hash模式 —— 使用URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。">
+<meta name="twitter:image" content="http://www.91pug.com/images/vue.png">
     
 
     
@@ -190,7 +193,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-3-20-1" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -198,10 +201,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            到底是
+            Vue的hash模式、history模式引发的问题
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/03/20/3-20-1/">
+            <time datetime="2018-03-20T01:35:57.000Z" itemprop="datePublished">2018-03-20</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Vue/">Vue</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -209,7 +231,23 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>是福建省科技单独323</p>
+            <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><p><code>vue</code>路由默认<code>hash</code>模式 —— 使用<code>URL</code> 的 <code>hash</code> 来模拟一个完整的 <code>URL</code>，于是当 <code>URL</code> 改变时，页面不会重新加载。<br>如果不想要很丑的 hash，我们可以用路由的 <code>history</code> 模式，这种模式充分利用 <code>history.pushState API</code> 来完成 <code>URL</code> 跳转而无须重新加载页面。<a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  mode: <span class="string">'history'</span>,</span><br><span class="line">  routes: [...]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>当你使用 history 模式时，URL 就像正常的 url，例如 <a href="http://yoursite.com/user/id，也好看！" target="_blank" rel="noopener">http://yoursite.com/user/id，也好看！</a></p>
+<p>不过这种模式要玩好，还需要后台配置支持。因为我们的应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问 <a href="http://oursite.com/user/id" target="_blank" rel="noopener">http://oursite.com/user/id</a> 就会返回 404，这就不好看了。</p>
+<p>所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面，这个页面就是你 app 依赖的页面。</p>
+<h3 id="后端配置例子"><a href="#后端配置例子" class="headerlink" title="后端配置例子"></a>后端配置例子</h3><h4 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule mod_rewrite.c&gt;</span><br><span class="line">  RewriteEngine On</span><br><span class="line">  RewriteBase /</span><br><span class="line">  RewriteRule ^index\.html$ - [L]</span><br><span class="line">  RewriteCond %&#123;REQUEST_FILENAME&#125; !-f</span><br><span class="line">  RewriteCond %&#123;REQUEST_FILENAME&#125; !-d</span><br><span class="line">  RewriteRule . /index.html [L]</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="原生-Node-js"><a href="#原生-Node-js" class="headerlink" title="原生 Node.js"></a>原生 Node.js</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const http = require(<span class="string">'http'</span>)</span><br><span class="line">const fs = require(<span class="string">'fs'</span>)</span><br><span class="line">const httpPort = 80</span><br><span class="line"></span><br><span class="line">http.createServer((req, res) =&gt; &#123;</span><br><span class="line">  fs.readFile(<span class="string">'index.htm'</span>, <span class="string">'utf-8'</span>, (err, content) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">      console.log(<span class="string">'We cannot open "index.htm" file.'</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line">      <span class="string">'Content-Type'</span>: <span class="string">'text/html; charset=utf-8'</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    res.end(content)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;).listen(httpPort, () =&gt; &#123;</span><br><span class="line">  console.log(<span class="string">'Server listening on: http://localhost:%s'</span>, httpPort)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="history模式的优点"><a href="#history模式的优点" class="headerlink" title="history模式的优点:"></a>history模式的优点:</h2><p><strong>1.url变成真正的url，url看上去更好看。</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://yoursite.com/<span class="comment">#/a/b  //hash模式</span></span><br><span class="line">http://yoursite.com/a/b  //<span class="built_in">history</span>模式</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.可以使用vue-router的滚动行为，这个用来记忆进入其他页面之前的位置非常好用，配置一下就可以直接使用了，前提是开启histroy模式。</strong><br><img src="../../../../images/vue.png" alt=""><br><strong>3.类似项目引入微信js-sdk的时候，一些操作是对url是有要求，url不能带上’#’，如果没有开启histroy模式，很可能会导致问题。</strong><br><strong>4.像vue-cli的配置，都是以路由开启history模式的标准来配置的（下面会讲到一个栗子），没有开启的话，自己要另外配置。</strong></p>
+<h2 id="先hash模式，后histroy模式"><a href="#先hash模式，后histroy模式" class="headerlink" title="先hash模式，后histroy模式"></a>先hash模式，后histroy模式</h2><p>先用hash模式部署项目到线上，然后再开启histroy模式，由此引发的一些问题。</p>
+<h4 id="1-找不到资源问题："><a href="#1-找不到资源问题：" class="headerlink" title="1.找不到资源问题："></a>1.找不到资源问题：</h4><p>在hash模式下面，直接打包的话，会导致找不到css、js和图片资源，然后经过百度之后，做出了如下截图的配置操作，更改assetsPublicPath：’/‘为 assetsPublicPath：’./‘<br>在hash模式下，像上面那么配置就没有问题了。当时我还以为vue-cli配置有问题，实际上，人家才没有问题呢，是我们自己没有开启history模式的问题。<br>然后开启了histroy模式之后，因为我们之前更改了assetsPublicPath属性，所以要把那个.给去掉，改回来：assetsPublicPath：’/‘</p>
+<h4 id="2-请求带上路由，导致请求失败"><a href="#2-请求带上路由，导致请求失败" class="headerlink" title="2.请求带上路由，导致请求失败"></a>2.请求带上路由，导致请求失败</h4><p><strong>正确的请求是：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:www.xxx.com/api/接口 //api是我通过proxyTable转发地址的代理名字</span><br></pre></td></tr></table></figure></p>
+<p><strong>开启histroy模式之后：</strong><br>在二层的路由里面会出现这种情况：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">路由是：http:www.xxx.com/a/b</span><br><span class="line">http:www.xxx.com/api/a/接口 //这就导致了请求失败，要把a也去掉才是正确的</span><br></pre></td></tr></table></figure></p>
+<p>解决方式是：<br>可以在全局请求中设置一个baseURL，这个baseURL就是项目的网站地址（http:<a href="http://www.xxx.com）,然后二层的路由也会自动去掉前面的a和b。" target="_blank" rel="noopener">www.xxx.com）,然后二层的路由也会自动去掉前面的a和b。</a></p>
+<h4 id="3-cookie问题"><a href="#3-cookie问题" class="headerlink" title="3.cookie问题"></a>3.cookie问题</h4><p>项目分为两层,从a登录，b那边刷新就会出现没有cookie的情况。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">两层路由</span><br><span class="line">http://yoursite.com/a</span><br><span class="line">http://yoursite.com/b</span><br></pre></td></tr></table></figure></p>
+<p>这里是因为cookie能否拿到跟存储的路由位置是有关的，之前使用hash模式因为hash模式的url<code>http://yoursite.com/#/a/b</code>，会统一存在<code>http://yoursite.com</code>下面。<br>而history模式cookie就会存在<code>http://yoursite.com/a</code>或者<code>http://yoursite.com/b</code>下面，另外一边就会没有cookiie。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">解决办法：</span><br><span class="line">不要分为两层，统一所有的路由都在一个路由地址下面。</span><br><span class="line">在项目的路由的根地址path:<span class="string">'/'</span>里面存cookie。</span><br><span class="line">使用sessionStorage存信息，我就是用这个方法，使用方法。</span><br><span class="line">sessionStorage只要在http://yoursite.com都可以访问的到，不管是存在a上面还是b上面。</span><br></pre></td></tr></table></figure></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>搭建Vue项目时，开启history模式，和后端沟通路由情况</p>
 
         
         </div>
@@ -220,7 +258,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/tags/index.html" data-id="cjez40rv1000s2metrmh2h8a3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/03/20/3-20-1/" data-id="cjez40ru9000a2met1c88wnzt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -293,6 +331,25 @@
     </div>
     
         
+<nav id="article-nav">
+    
+        <a href="/2018/03/20/3-20-2/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    大家都在用Vue，今天换个口味，玩玩React
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/03/19/3-19-4/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">如何解决浏览器兼容性问题</div>
+        </a>
+    
+</nav>
+
 
     
 </article>

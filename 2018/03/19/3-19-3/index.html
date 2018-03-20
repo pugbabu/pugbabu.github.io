@@ -5,17 +5,17 @@
     
     <title>最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等 | 天龙巴布</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="什么是 RegExp？ RegExp 是正则表达式（Regular expression）的缩写，作用是对字符串执行模式匹配。 通常用于格式验证、正则替换、查找子串等 各种编程语言的正则表达式基本相同，不同的语言可能会有一些细小的差别 RegExp入门：http://www.w3school.com.cn/js/js_obj_regexp.asp javascript 正则表达式：http://w">
+    <meta name="description" content="本文归纳总结了正则的概念、语法、方法以及常见的正则表达式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等">
 <meta property="og:url" content="http://www.91pug.com/2018/03/19/3-19-3/index.html">
 <meta property="og:site_name" content="天龙巴布">
-<meta property="og:description" content="什么是 RegExp？ RegExp 是正则表达式（Regular expression）的缩写，作用是对字符串执行模式匹配。 通常用于格式验证、正则替换、查找子串等 各种编程语言的正则表达式基本相同，不同的语言可能会有一些细小的差别 RegExp入门：http://www.w3school.com.cn/js/js_obj_regexp.asp javascript 正则表达式：http://w">
+<meta property="og:description" content="本文归纳总结了正则的概念、语法、方法以及常见的正则表达式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-19T11:54:39.000Z">
+<meta property="og:updated_time" content="2018-03-20T02:36:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等">
-<meta name="twitter:description" content="什么是 RegExp？ RegExp 是正则表达式（Regular expression）的缩写，作用是对字符串执行模式匹配。 通常用于格式验证、正则替换、查找子串等 各种编程语言的正则表达式基本相同，不同的语言可能会有一些细小的差别 RegExp入门：http://www.w3school.com.cn/js/js_obj_regexp.asp javascript 正则表达式：http://w">
+<meta name="twitter:description" content="本文归纳总结了正则的概念、语法、方法以及常见的正则表达式">
     
 
     
@@ -154,7 +154,7 @@
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                4
+                6
                 <span>标签</span>
             </div>
         </div>
@@ -228,14 +228,14 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="什么是-RegExp？"><a href="#什么是-RegExp？" class="headerlink" title="什么是 RegExp？"></a>什么是 RegExp？</h1><ul>
+            <p>本文归纳总结了正则的概念、语法、方法以及常见的正则表达式<a id="more"></a></p>
+<h1 id="什么是-RegExp？"><a href="#什么是-RegExp？" class="headerlink" title="什么是 RegExp？"></a>什么是 RegExp？</h1><ul>
 <li>RegExp 是正则表达式（Regular expression）的缩写，作用是对字符串执行模式匹配。</li>
 <li>通常用于格式验证、正则替换、查找子串等</li>
 <li>各种编程语言的正则表达式基本相同，不同的语言可能会有一些细小的差别</li>
 <li>RegExp入门：<a href="http://www.w3school.com.cn/js/js_obj_regexp.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/js/js_obj_regexp.asp</a></li>
 <li>javascript 正则表达式：<a href="http://www.imooc.com/learn/706" target="_blank" rel="noopener">http://www.imooc.com/learn/706</a></li>
-<li>Python 正则表达式：<a href="http://www.imooc.com/learn/550" target="_blank" rel="noopener">http://www.imooc.com/learn/550</a><a id="more"></a>
-<h1 id="RegExp-语法"><a href="#RegExp-语法" class="headerlink" title="RegExp 语法"></a>RegExp 语法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 直接实例化</span><br><span class="line">var reg = new RegExp(pattern [, flags]);</span><br><span class="line">// 隐式创建(推荐)</span><br><span class="line">var reg = /pattern/flags;</span><br></pre></td></tr></table></figure>
+<li>Python 正则表达式：<a href="http://www.imooc.com/learn/550" target="_blank" rel="noopener">http://www.imooc.com/learn/550</a><h1 id="RegExp-语法"><a href="#RegExp-语法" class="headerlink" title="RegExp 语法"></a>RegExp 语法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 直接实例化</span><br><span class="line">var reg = new RegExp(pattern [, flags]);</span><br><span class="line">// 隐式创建(推荐)</span><br><span class="line">var reg = /pattern/flags;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>参数 pattern 是一个字符串，指定了正则表达式的模式或其他正则表达式。</p>
@@ -264,7 +264,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/03/19/3-19-3/" data-id="cjey8cvzf000899etckulloce" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/03/19/3-19-3/" data-id="cjez40ru500052metv9p5cz2j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -378,6 +378,44 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/03/20/3-20-2/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/20/3-20-2/" class="title">大家都在用Vue，今天换个口味，玩玩React</a></p>
+                            <p class="item-date"><time datetime="2018-03-20T02:42:49.000Z" itemprop="datePublished">2018-03-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/20/3-20-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/20/3-20-1/" class="title">Vue的hash模式、history模式引发的问题</a></p>
+                            <p class="item-date"><time datetime="2018-03-20T01:35:57.000Z" itemprop="datePublished">2018-03-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/03/19/3-19-4/" class="thumbnail">
     
     
@@ -432,44 +470,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/19/3-19-1/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-                            <p class="item-title"><a href="/2018/03/19/3-19-1/" class="title">佛系程序员的月薪五万指南</a></p>
-                            <p class="item-date"><time datetime="2018-03-19T08:00:51.000Z" itemprop="datePublished">2018-03-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/19/hhah/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
-                            <p class="item-title"><a href="/2018/03/19/hhah/" class="title">我是谁</a></p>
-                            <p class="item-date"><time datetime="2018-03-19T06:46:50.000Z" itemprop="datePublished">2018-03-19</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -479,7 +479,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">文章分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -497,7 +497,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -506,7 +506,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a>
         </div>
     </div>
 
