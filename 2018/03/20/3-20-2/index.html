@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://www.91pug.com/images/react2.png">
 <meta property="og:image" content="http://www.91pug.com/images/react3.png">
 <meta property="og:image" content="http://www.91pug.com/images/react4.png">
-<meta property="og:updated_time" content="2018-03-20T03:32:05.000Z">
+<meta property="og:updated_time" content="2018-03-20T05:47:51.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大家都在用Vue，今天换个口味，玩玩React">
 <meta name="twitter:description" content="在公司里一直使用vue开发项目，每次开发新项目时，就vue init webpack projectName, cd projectName, npm i, npm run dev。如今连公司后台的同事都在学习vue，确实能感觉vue的火，看看github上vue的star">
@@ -158,11 +158,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                6
+                8
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                6
+                8
                 <span>标签</span>
             </div>
         </div>
@@ -236,8 +236,8 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>在公司里一直使用vue开发项目，每次开发新项目时，就<code>vue init webpack projectName</code>, <code>cd projectName</code>, <code>npm i</code>, <code>npm run dev</code>。如今连公司后台的同事都在学习vue，确实能感觉vue的火，看看github上vue的star<br><img src="../../../../images/vue1.png" alt=""><a id="more"></a><br>但是，还有个star更高的框架-react<br><img src="../../../../images/react.png" alt=""><br>闲着无事，撸个<code>react</code>的<code>demo</code>，为了避免配置的太多坑，在网上搜索类似<code>vue-cli</code>脚手架的工具，根据更新时间、star数，最后选择了<code>create-react-app</code><br><img src="../../../../images/react1.png" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line"><span class="built_in">cd</span> my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<p>浏览器打开：<code>http://localhost:3000/</code>,启动后页面显示如下：<br><img src="../../../../images/react2.png" alt=""><br>在项目中点app.js写个双向绑定点demo，结果报错<br><img src="../../../../images/react3.png" alt=""><br>报错的结果直接呈现在页面尚，比较直观<br><img src="../../../../images/react4.png" alt=""></p>
+            <p>在公司里一直使用vue开发项目，每次开发新项目时，就<code>vue init webpack projectName</code>, <code>cd projectName</code>, <code>npm i</code>, <code>npm run dev</code>。如今连公司后台的同事都在学习vue，确实能感觉vue的火，看看github上vue的star<br><img src="../../../../images/vue1.png" alt=""><a id="more"></a><br>但是，还有个star更高的框架-react<br><img src="../../../../images/react.png" alt=""><br>文档地址：<a href="https://doc.react-china.org/docs/hello-world.html" target="_blank" rel="noopener">https://doc.react-china.org/docs/hello-world.html</a><br>闲着无事，撸个<code>react</code>的<code>demo</code>，为了避免配置的太多坑，在网上搜索类似<code>vue-cli</code>脚手架的工具，根据更新时间、star数，最后选择了<code>create-react-app</code><br><img src="../../../../images/react1.png" alt=""><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app</span><br><span class="line"><span class="built_in">cd</span> my-app</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
+<p>浏览器打开：<code>http://localhost:3000/</code>,启动后页面显示如下：<br><img src="../../../../images/react2.png" alt=""><br>在项目中点app.js写个双向绑定的demo，结果报错<br><img src="../../../../images/react3.png" alt=""><br>报错的结果直接呈现在页面上，比较直观<br><img src="../../../../images/react4.png" alt=""><br>查看<code>react</code>文档，把<code>getInitialState</code>删除，换成如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;value: <span class="string">'hello'</span>&#125;;</span><br><span class="line">    this.handleChange = this.handleChange.bind(this);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
         
         </div>
@@ -248,7 +248,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/03/20/3-20-2/" data-id="cjez40ru800082met26w4ign1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/03/20/3-20-2/" data-id="cjfdqsrvi0008lbetvrxcrzmi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -323,6 +323,15 @@
         
 <nav id="article-nav">
     
+        <a href="/2018/03/20/3-20-3/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    http状态码知识总结
+                
+            </div>
+        </a>
+    
     
         <a href="/2018/03/20/3-20-1/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
@@ -349,6 +358,44 @@
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/30/3-30-1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/30/3-30-1/" class="title">移动端h5网站搭建框架推荐</a></p>
+                            <p class="item-date"><time datetime="2018-03-30T09:06:59.000Z" itemprop="datePublished">2018-03-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/20/3-20-3/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/20/3-20-3/" class="title">http状态码知识总结</a></p>
+                            <p class="item-date"><time datetime="2018-03-20T05:58:57.000Z" itemprop="datePublished">2018-03-20</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -407,44 +454,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/19/3-19-3/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
-                            <p class="item-title"><a href="/2018/03/19/3-19-3/" class="title">最全正则表达式总结：验证QQ号、手机号、Email、中文、邮编、身份证、IP地址等</a></p>
-                            <p class="item-date"><time datetime="2018-03-19T09:44:20.000Z" itemprop="datePublished">2018-03-19</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/19/3-19-2/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
-                            <p class="item-title"><a href="/2018/03/19/3-19-2/" class="title">前端性能优化之加载技术</a></p>
-                            <p class="item-date"><time datetime="2018-03-19T09:01:32.000Z" itemprop="datePublished">2018-03-19</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -463,7 +472,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">6</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">8</span></li></ul>
         </div>
     </div>
 
@@ -472,7 +481,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/性能优化/">性能优化</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -481,7 +490,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a>
+            <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a>
         </div>
     </div>
 
