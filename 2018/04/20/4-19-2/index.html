@@ -3,18 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签: Vue | 天龙巴布</title>
+    <title>项目开发中遇到的那些vue坑 | 天龙巴布</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="天龙巴布的个人小窝，记录成长的每一小步">
-<meta property="og:type" content="website">
-<meta property="og:title" content="天龙巴布">
-<meta property="og:url" content="http://www.91pug.com/tags/Vue/index.html">
+    <meta name="description" content="无坑不商">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目开发中遇到的那些vue坑">
+<meta property="og:url" content="http://www.91pug.com/2018/04/20/4-19-2/index.html">
 <meta property="og:site_name" content="天龙巴布">
-<meta property="og:description" content="天龙巴布的个人小窝，记录成长的每一小步">
+<meta property="og:description" content="无坑不商">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-04-23T08:01:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天龙巴布">
-<meta name="twitter:description" content="天龙巴布的个人小窝，记录成长的每一小步">
+<meta name="twitter:title" content="项目开发中遇到的那些vue坑">
+<meta name="twitter:description" content="无坑不商">
     
 
     
@@ -189,45 +190,145 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#Vue</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-4-19-2" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/20/3-20-1/">Vue的hash模式、history模式引发的问题</a>
+        <h1 class="article-title" itemprop="name">
+            项目开发中遇到的那些vue坑
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/20/3-20-1/">
-            <time datetime="2018-03-20T01:35:57.000Z" itemprop="datePublished">2018-03-20</time>
+        <a href="/2018/04/20/4-19-2/">
+            <time datetime="2018-04-20T06:47:53.000Z" itemprop="datePublished">2018-04-20</time>
         </a>
     </div>
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Vue/">Vue</a>
-    </div>
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>无坑不商<a id="more"></a></p>
+<h4 id="1-路由传参取值"><a href="#1-路由传参取值" class="headerlink" title="1. 路由传参取值"></a>1. 路由传参取值</h4><p>路由传参有两种方式，一种是params，一种是query的形式。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">this.<span class="variable">$router</span>.push(&#123;</span><br><span class="line">    path: <span class="string">'/other'</span>,</span><br><span class="line">    params: &#123;</span><br><span class="line">        id: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">this.<span class="variable">$router</span>.push(&#123;</span><br><span class="line">    path: <span class="string">'/other'</span>,</span><br><span class="line">    query: &#123;</span><br><span class="line">        id: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">// query传参会在url上带上参数http://localhost:3000/<span class="comment">#/other?id=1 params参数不在url上传递</span></span><br></pre></td></tr></table></figure></p>
+<p>很多时候，会用到传递的参数，比如通过传递的id，调用后台接口获取数据。如果用的是params，初次跳转到页面，数据正常显示，但是刷新页面后，数据没有了。<br><code>解决方法</code>：改用query传参或者通过缓存，把参数存取下来，再缓存中取值</p>
+<h4 id="2-路由变化页面数据没有刷新"><a href="#2-路由变化页面数据没有刷新" class="headerlink" title="2.路由变化页面数据没有刷新"></a>2.路由变化页面数据没有刷新</h4><p>比如文章详情数据，依赖路由的params参数获取的(ajax写在created生命周期里面)，因为路由懒加载的关系，退出页面再进入另一个文章页面并不会运行created组件生命周期，导致文章数据还是上一个文章的数据。<br><code>解决方法</code>：watch监听路由是否变化<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch: &#123;</span><br><span class="line">    <span class="string">'$route'</span>(to, from) &#123; //监听路由是否变化</span><br><span class="line">        <span class="keyword">if</span> (this.<span class="variable">$route</span>.params.id) &#123;</span><br><span class="line">            // 获取数据</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3-路由跳转后-setInterval继续运行并没有销毁"><a href="#3-路由跳转后-setInterval继续运行并没有销毁" class="headerlink" title="3.路由跳转后,setInterval继续运行并没有销毁"></a>3.路由跳转后,setInterval继续运行并没有销毁</h4><p>比如一些弹幕，走马灯文字，这类需要定时调用的，路由跳转之后，因为组件已经销毁了，但是setInterval还没有销毁，还在继续后台调用，控制台会不断报错，如果运算量大的话，无法及时清除，会导致严重的页面卡顿。<br><code>解决办法</code>：在组件生命周期beforeDestroy停止setInterval<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">beforeDestroy</span></span>()&#123;</span><br><span class="line">    clearInterval(this.intervalMove);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-                </div>
-            </div>
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://www.91pug.com/2018/04/20/4-19-2/" data-id="cjgbydpym000n90etp4kijasm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/04/19/4-19-1/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">数组去重的几个方法总结</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
 </section>
             
                 
