@@ -3,20 +3,19 @@
 <head>
     <meta charset="utf-8">
     
-    <title>初探weex | 天龙巴布</title>
+    <title>2018年最值得关注的30个Vue开源项目(转载自掘金) | 天龙巴布</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="一直听说weex框架三端通吃，今天就来实验下">
-<meta name="keywords" content="Vue">
+    <meta name="description" content="在过去的一年中，我比较了近3000个Vue.js开源项目，选出30强（1％的比例）。 这是一个有竞争力的清单，因为我仔细挑选2017年1月至12月期间发布的最佳开源Vue.js库，工具和项目。通过考虑流行度，参与度和近况来评估这份清单的质量。举个简单的例子，这份清单中的项目在某著名同性交友平台的star数平均量高达3795，还不错吧？ 开源项目对程序员来说是很有用的。你可以通过读代码并且在现有项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="初探weex">
-<meta property="og:url" content="http://www.91pug.com/2018/04/28/4-28-1/index.html">
+<meta property="og:title" content="2018年最值得关注的30个Vue开源项目(转载自掘金)">
+<meta property="og:url" content="http://www.91pug.com/2018/06/01/6-1/index.html">
 <meta property="og:site_name" content="天龙巴布">
-<meta property="og:description" content="一直听说weex框架三端通吃，今天就来实验下">
+<meta property="og:description" content="在过去的一年中，我比较了近3000个Vue.js开源项目，选出30强（1％的比例）。 这是一个有竞争力的清单，因为我仔细挑选2017年1月至12月期间发布的最佳开源Vue.js库，工具和项目。通过考虑流行度，参与度和近况来评估这份清单的质量。举个简单的例子，这份清单中的项目在某著名同性交友平台的star数平均量高达3795，还不错吧？ 开源项目对程序员来说是很有用的。你可以通过读代码并且在现有项目">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-28T09:10:52.000Z">
+<meta property="og:updated_time" content="2018-06-04T01:41:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="初探weex">
-<meta name="twitter:description" content="一直听说weex框架三端通吃，今天就来实验下">
+<meta name="twitter:title" content="2018年最值得关注的30个Vue开源项目(转载自掘金)">
+<meta name="twitter:description" content="在过去的一年中，我比较了近3000个Vue.js开源项目，选出30强（1％的比例）。 这是一个有竞争力的清单，因为我仔细挑选2017年1月至12月期间发布的最佳开源Vue.js库，工具和项目。通过考虑流行度，参与度和近况来评估这份清单的质量。举个简单的例子，这份清单中的项目在某著名同性交友平台的star数平均量高达3795，还不错吧？ 开源项目对程序员来说是很有用的。你可以通过读代码并且在现有项目">
     
 
     
@@ -191,7 +190,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-4-28-1" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-6-1" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -199,7 +198,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            初探weex
+            2018年最值得关注的30个Vue开源项目(转载自掘金)
         </h1>
     
 
@@ -208,24 +207,14 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/28/4-28-1/">
-            <time datetime="2018-04-28T08:36:28.000Z" itemprop="datePublished">2018-04-28</time>
+        <a href="/2018/06/01/6-1/">
+            <time datetime="2018-06-01T03:03:05.000Z" itemprop="datePublished">2018-06-01</time>
         </a>
     </div>
 
 
                         
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/前端/">前端</a>
-    </div>
-
                         
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Vue/">Vue</a>
-    </div>
-
                     </div>
                 
             </header>
@@ -234,11 +223,42 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>一直听说weex框架三端通吃，今天就来实验下<a id="more"></a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>按照官方文档步骤，先全局安装<code>weex-toolkit</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install weex-toolkit -g</span><br></pre></td></tr></table></figure></p>
-<p>接着，cd到你想创建工程文件的目录文件夹，利用<code>weex create</code> 创建一个空的模版项目<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">weex create weex-app</span><br><span class="line"><span class="built_in">cd</span> weex-app</span><br><span class="line">npm install</span><br><span class="line">npm start</span><br></pre></td></tr></table></figure></p>
-<p>接着意想不到的报错了，报错截图忘记截了。百度问题，建议卸载weex-toolkit再安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall weex-toolkit -g</span><br><span class="line">cnpm install weex-toolkit -g</span><br></pre></td></tr></table></figure></p>
-<p>再按照步骤执行，顺利运行</p>
+            <p>在过去的一年中，我比较了近3000个Vue.js开源项目，选出30强（1％的比例）。</p>
+<p>这是一个有竞争力的清单，因为我仔细挑选2017年1月至12月期间发布的最佳开源Vue.js库，工具和项目。通过考虑流行度，参与度和近况来评估这份清单的质量。举个简单的例子，这份清单中的项目在某著名同性交友平台的star数平均量高达3795，还不错吧？</p>
+<p>开源项目对程序员来说是很有用的。你可以通过读代码并且在现有项目的基础上构建一些东西来学习，因为如果想提高你的Vue开发技术，那么花些时间来玩一下过去一年你可能错过的Vue.js开源项目是很值得的。<a id="more"></a></p>
+<p>原文地址：<br><a href="https://juejin.im/entry/5b0dfa9151882539e7429714?utm_source=gold_browser_extension" target="_blank" rel="noopener">https://juejin.im/entry/5b0dfa9151882539e7429714?utm_source=gold_browser_extension</a></p>
+<p>NO.1<br>Element：一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库 [Github star：22004]。</p>
+<p>NO.2<br>iView：一套高质量的UI组件库 [Github star：12175]。</p>
+<p>NO.3<br>Best-resume-ever：用Vue和LESS简单、快速建立许多漂亮的简历，并创建你最好的简历。 [Github star：8839]。</p>
+<p>NO.4<br>Vue-element-admin：一个神奇的vue后台管理系统 [Github star：7942]。</p>
+<p>NO.5<br>Vuetify： Vue.js 2的Material组件库 [Github star：7672]。</p>
+<p>NO.6<br>Vue-admin： Vue后台面板管理库，基于Vue 2.0和Bulma 0.3 [Github star：7033]。</p>
+<p>NO.7<br>vue-hackernews-2.0：vue-router＆vuex和服务器端渲染 [Github star：6687]。</p>
+<p>NO.8<br>Vue-devtools (v 4.0)：用于调试Vue.js应用程序的Chrome devtools扩展程序 [Github star：6292]。</p>
+<p>NO.9<br>Vue-material：Vue.js的Material design [Github star：5230]。</p>
+<p>NO.10<br>Quasar：构建响应式网站，PWA，混合移动应用程序（看起来很原生！）和Electron应用程序，全部同时使用相同的代码库，并基于Vue。 [Github star：4690]。</p>
+<p>Fundebug错误实时监控为您的Vue项目保驾护航！</p>
+<p>NO.11<br>Electron-vue：Electron＆Vue.js快速启动样板，包括vue-cli脚手架，通用Vue插件， electron-packager/electron-builder，单元/e2e测试，vue-devtools和webpack。 [Github star：4527]。</p>
+<p>NO.12<br>Vue-loader (v 13)：Vue.js组件的Webpack加载程序(loader) [Github star：2588]。</p>
+<p>NO.13<br>Vuepack (v 3.0)：一个使用Vue 2，Vuex，Vue-router和Webpack 2（甚至是Electron）的新潮种子项目。 [Github star：2077]。</p>
+<p>NO.14<br>Buefy：基于Bulma的Vue.js的轻量级UI组件 [Github star：1956]。</p>
+<p>NO.15<br>Vant：YouZan的Vue.js 2.0移动用户界面 [Github star：1730]。</p>
+<p>NO.16<br>Codesandbox：专为Web应用程序开发而设计的在线代码编辑器 [Github star：1552]。</p>
+<p>NO.17<br>Vuefire (v 2.0)：Firebase 2＆&gt; = 3的Vue.js 1＆2绑定 [Github star：1228]。</p>
+<p>NO.18<br>Vue-tetris：使用Vue，Vuex，Immutable做俄罗斯方块 [Github star：1152]。</p>
+<p>NO.19<br>At-ui：一款全新的平面UI套件，专门用于桌面应用程序，由Vue.js 2.0制作而成。 [Github star：1099]。</p>
+<p>NO.20<br>Vue-recyclerview：使用vue-recyclerview掌握大型列表 [Github star：1021]。</p>
+<p>Fundebug错误实时监控为您及时发现bug，提高debug效率！</p>
+<p>NO.21<br>Vuex-persistedstate (v 2.0)：用本地存储保持Vuex状态 [Github star：1009]。</p>
+<p>NO.22<br>Vue-test-utils：用于测试Vue组件的实用程序 [Github star：977]。</p>
+<p>NO.23<br>Vue-meta (v 1.0)：管理Vue 2.0组件中的页面元信息，支持SSR +流媒体。 [Github star：958]。</p>
+<p>NO.24<br>ESLint-plugin-vue：官方ESLint的Vue.js插件 [Github star：864]。</p>
+<p>NO.25<br>Vue-js-modal：易于使用，高度可定制，移动友好的Vue.js 2.0+ modal [Github star：775]。</p>
+<p>NO.26<br>Vue-tables-2：Vue.js 2 网格组件 [Github star：540]。</p>
+<p>NO.27<br>Vue-baidu-map：Vue 2.x的百度地图组件 [Github star：540]。</p>
+<p>NO.28<br>Vuex-loading：Vue / Vuex应用程序的复杂装载程序管理 [Github star：291]。</p>
+<p>NO.29<br>Vue-js-grid：一个具有顺畅的排序，拖放和重新排序的Vue.js 2.x响应式网格系统。 [Github star：248]。</p>
+<p>NO.30<br>Dockeron：用于Docker的Electron + Vue.js [Github star：196]。</p>
 
         
         </div>
@@ -249,7 +269,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/28/4-28-1/" data-id="cjhzlbixp000pc7etndnmckbf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/06/01/6-1/" data-id="cjhzlbiy10016c7et005c5u9k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -324,19 +344,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/05/16/5-16-1/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    用Vue开发电商页面时，电梯容器功能中遇到的一些问题
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/04/20/4-19-2/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/05/29/5-29-1/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">项目开发中遇到的那些vue坑</div>
+            <div class="article-nav-title">常用函数方法封装(待补充)</div>
         </a>
     
 </nav>
