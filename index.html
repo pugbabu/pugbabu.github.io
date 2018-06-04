@@ -149,7 +149,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                16
+                17
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -190,6 +190,127 @@
 
             
             <section id="main">
+    <article id="post-6-4" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/06/04/6-4/">实用vue插件整理</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/06/04/6-4/">
+            <time datetime="2018-06-04T02:05:24.000Z" itemprop="datePublished">2018-06-04</time>
+        </a>
+    </div>
+
+
+                        
+                        
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>工欲善其事，必先利其器，本文是将vue项目开发过程中使用到的vue插件进行整理，方便日后项目开发</p>
+            <p class="article-more-link">
+                <a href="/2018/06/04/6-4/#more">阅读全文</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://www.91pug.com/2018/06/04/6-4/" data-id="cjhzv4yth00193ketgc2kb3dr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-6-1" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -237,7 +358,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/06/01/6-1/" data-id="cjhzlbiy10016c7et005c5u9k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/06/01/6-1/" data-id="cjhzv4ytf00163ketunp2f6yv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -358,7 +479,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/05/29/5-29-1/" data-id="cjhzlbixw000zc7eto65mtvyi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/05/29/5-29-1/" data-id="cjhzv4yta000z3ket9t48z9fd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -489,7 +610,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/05/16/5-16-1/" data-id="cjhzlbixu000vc7etrj7cvgyo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/05/16/5-16-1/" data-id="cjhzv4yt7000v3ket274g5z43" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -620,7 +741,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/28/4-28-1/" data-id="cjhzlbixp000pc7etndnmckbf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/04/28/4-28-1/" data-id="cjhzv4yt2000p3ketd6vv8pbn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -751,7 +872,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/20/4-19-2/" data-id="cjhzlbixm000mc7etj2bpp2fh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/04/20/4-19-2/" data-id="cjhzv4yt0000m3ket984r8ca3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -882,7 +1003,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/19/4-19-1/" data-id="cjhzlbixf000jc7etskikzhai" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/04/19/4-19-1/" data-id="cjhzv4ysw000j3ketf6g4misf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1013,7 +1134,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/09/4-9-1/" data-id="cjhzlbixz0012c7etnrvxdjf2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/04/09/4-9-1/" data-id="cjhzv4ytc00123ketmo2fiupc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1144,7 +1265,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/03/4-3-1/" data-id="cjhzlbixs000sc7etnhi3bo3t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/04/03/4-3-1/" data-id="cjhzv4yt5000s3ket3dryubcp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1275,138 +1396,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/03/30/3-30-1/" data-id="cjhzlbix5000hc7etl099j93p" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-3-20-3" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/20/3-20-3/">http状态码知识总结</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/20/3-20-3/">
-            <time datetime="2018-03-20T05:58:57.000Z" itemprop="datePublished">2018-03-20</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/前端/">前端</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/http/">http</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>这里是对每个http状态的主要作用进行概括，关于详细的http状态可以在网上搜索http百度百科</p>
-            <p class="article-more-link">
-                <a href="/2018/03/20/3-20-3/#more">阅读全文</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://www.91pug.com/2018/03/20/3-20-3/" data-id="cjhzlbiwo000ec7etuwjuje9l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/03/30/3-30-1/" data-id="cjhzv4yst000h3ketic82y6rz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1499,6 +1489,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/06/04/6-4/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/06/04/6-4/" class="title">实用vue插件整理</a></p>
+                            <p class="item-date"><time datetime="2018-06-04T02:05:24.000Z" itemprop="datePublished">2018-06-04</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/06/01/6-1/" class="thumbnail">
     
     
@@ -1572,25 +1581,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/20/4-19-2/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/前端/">前端</a></p>
-                            <p class="item-title"><a href="/2018/04/20/4-19-2/" class="title">项目开发中遇到的那些vue坑</a></p>
-                            <p class="item-date"><time datetime="2018-04-20T06:47:53.000Z" itemprop="datePublished">2018-04-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1609,7 +1599,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">8</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">8</span></li></ul>
         </div>
     </div>
 
