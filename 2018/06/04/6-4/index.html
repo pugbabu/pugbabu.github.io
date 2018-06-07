@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="天龙巴布">
 <meta property="og:description" content="工欲善其事，必先利其器，本文是将vue项目开发过程中使用到的vue插件进行整理，方便日后项目开发">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-05T07:08:45.000Z">
+<meta property="og:updated_time" content="2018-06-07T06:24:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实用vue插件整理">
 <meta name="twitter:description" content="工欲善其事，必先利其器，本文是将vue项目开发过程中使用到的vue插件进行整理，方便日后项目开发">
@@ -244,6 +244,7 @@
 <h4 id="16、js-cookie（轻量级的cookie插件）"><a href="#16、js-cookie（轻量级的cookie插件）" class="headerlink" title="16、js-cookie（轻量级的cookie插件）"></a>16、js-cookie（轻量级的cookie插件）</h4><p>github: <a href="https://github.com/js-cookie/js-cookie" target="_blank" rel="noopener">https://github.com/js-cookie/js-cookie</a></p>
 <h4 id="17、nprogress（轻量级的进度条组件）"><a href="#17、nprogress（轻量级的进度条组件）" class="headerlink" title="17、nprogress（轻量级的进度条组件）"></a>17、nprogress（轻量级的进度条组件）</h4><p>github：<a href="https://github.com/rstacruz/nprogress" target="_blank" rel="noopener">https://github.com/rstacruz/nprogress</a><br>用法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import NProgress from <span class="string">'nprogress'</span></span><br><span class="line">import <span class="string">'nprogress/nprogress.css'</span>// Progress 进度条样式</span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  NProgress.start()</span><br><span class="line">  <span class="keyword">if</span> (isLogin()) &#123;</span><br><span class="line">    next()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next(&#123;</span><br><span class="line">      path: <span class="string">'/login'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    NProgress.done()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h4 id="18、vue-waterfall（vue瀑布布局插件）"><a href="#18、vue-waterfall（vue瀑布布局插件）" class="headerlink" title="18、vue-waterfall（vue瀑布布局插件）"></a>18、vue-waterfall（vue瀑布布局插件）</h4><p>github：<a href="https://github.com/MopTym/vue-waterfall" target="_blank" rel="noopener">https://github.com/MopTym/vue-waterfall</a></p>
+<h4 id="19、soshm（社交分享组件）"><a href="#19、soshm（社交分享组件）" class="headerlink" title="19、soshm（社交分享组件）"></a>19、soshm（社交分享组件）</h4><p>github：<a href="https://github.com/calledT/soshm" target="_blank" rel="noopener">https://github.com/calledT/soshm</a><br>用法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//组件中</span><br><span class="line">const soshm = require(<span class="string">'soshm'</span>)</span><br><span class="line"><span class="function"><span class="title">mounted</span></span>() &#123;</span><br><span class="line">document.getElementById(<span class="string">'share'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    soshm.popIn(&#123;</span><br><span class="line">      title: <span class="string">'弹窗分享'</span>,</span><br><span class="line">      sites: [<span class="string">'weixin'</span>, <span class="string">'weibo'</span>, <span class="string">'tqq'</span>]</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 <p>更多插件可有查看<a href="https://segmentfault.com/p/1210000008583242/read?from=timeline" target="_blank" rel="noopener">https://segmentfault.com/p/1210000008583242/read?from=timeline</a></p>
 
         
@@ -255,7 +256,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/06/04/6-4/" data-id="cji3wfzg1001p4hetydak8w18" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/06/04/6-4/" data-id="cji45pqui001coiet4jvximrl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
