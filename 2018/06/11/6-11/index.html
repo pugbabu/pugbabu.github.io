@@ -3,18 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: Node | 天龙巴布</title>
+    <title>mongodb使用过程中的一些报错 | 天龙巴布</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="天龙巴布的个人小窝，记录成长的每一小步">
-<meta property="og:type" content="website">
-<meta property="og:title" content="天龙巴布">
-<meta property="og:url" content="http://www.91pug.com/categories/Node/index.html">
+    <meta name="description" content="周末玩电脑觉得有点小卡，然后把打开的程序通通关闭，包括了一直开着的mongodb进程。可能这个异常的行为，导致今天mongodb启动不了，连接不了数据库">
+<meta name="keywords" content="mongodb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb使用过程中的一些报错">
+<meta property="og:url" content="http://www.91pug.com/2018/06/11/6-11/index.html">
 <meta property="og:site_name" content="天龙巴布">
-<meta property="og:description" content="天龙巴布的个人小窝，记录成长的每一小步">
+<meta property="og:description" content="周末玩电脑觉得有点小卡，然后把打开的程序通通关闭，包括了一直开着的mongodb进程。可能这个异常的行为，导致今天mongodb启动不了，连接不了数据库">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-11T08:25:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天龙巴布">
-<meta name="twitter:description" content="天龙巴布的个人小窝，记录成长的每一小步">
+<meta name="twitter:title" content="mongodb使用过程中的一些报错">
+<meta name="twitter:description" content="周末玩电脑觉得有点小卡，然后把打开的程序通通关闭，包括了一直开着的mongodb进程。可能这个异常的行为，导致今天mongodb启动不了，连接不了数据库">
     
 
     
@@ -189,86 +191,146 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">Node</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-6-11" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/09/4-9-1/">知乎live分享-狼叔：如何正确的学习Node.js</a>
+        <h1 class="article-title" itemprop="name">
+            mongodb使用过程中的一些报错
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/4-9-1/">
-            <time datetime="2018-04-09T03:24:58.000Z" itemprop="datePublished">2018-04-09</time>
+        <a href="/2018/06/11/6-11/">
+            <time datetime="2018-06-11T08:19:46.000Z" itemprop="datePublished">2018-06-11</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Node/">Node</a>
-    </div>
-
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node/">Node</a>
+        <a class="tag-link" href="/tags/mongodb/">mongodb</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/03/4-3-1/">2018年Node.js开发框架介绍,待补充！</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>周末玩电脑觉得有点小卡，然后把打开的程序通通关闭，包括了一直开着的mongodb进程。可能这个异常的行为，导致今天mongodb启动不了，连接不了数据库<a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo mongod</span><br><span class="line">输入密码后，提示sudo mongod:<span class="built_in">command</span> not find</span><br><span class="line">网上寻找解决方法，说删除/data/db下的mongod.lock文件再启动</span><br><span class="line">按照步骤，依然失败</span><br><span class="line">最后在stackoverflow上找到一个方法</span><br><span class="line">输入命令sudo chown -R `id -un` /data/db，再进入mongodb目录的bin目录，输入./mongod，成功运行</span><br></pre></td></tr></table></figure></p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/03/4-3-1/">
-            <time datetime="2018-04-03T06:37:12.000Z" itemprop="datePublished">2018-04-03</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Node/">Node</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node/">Node</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://www.91pug.com/2018/06/11/6-11/" data-id="cji9zt15f001o7iethm8f1zd2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/06/04/6-4/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">实用vue插件整理</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
 </section>
             
                 
