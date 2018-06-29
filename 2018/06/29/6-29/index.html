@@ -3,29 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>2018年Node.js开发框架介绍,待补充！ | 天龙巴布</title>
+    <title>sys-debugger工具推荐，微信调试，h5页面真机调试及页面抓包必备佳品 | 天龙巴布</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="本文通过star数，简介，示例代码，官方文档，对每个框架进行整理介绍">
-<meta name="keywords" content="Node">
+    <meta name="description" content="网上有很多真机调试、页面抓包的工具，比如whistle、charles、sys-debugger,但是我觉得sys-debugger上手简单，功能强大，使用方便，在这整理下安装及使用的方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018年Node.js开发框架介绍,待补充！">
-<meta property="og:url" content="http://www.91pug.com/2018/04/03/4-3-1/index.html">
+<meta property="og:title" content="sys-debugger工具推荐，微信调试，h5页面真机调试及页面抓包必备佳品">
+<meta property="og:url" content="http://www.91pug.com/2018/06/29/6-29/index.html">
 <meta property="og:site_name" content="天龙巴布">
-<meta property="og:description" content="本文通过star数，简介，示例代码，官方文档，对每个框架进行整理介绍">
+<meta property="og:description" content="网上有很多真机调试、页面抓包的工具，比如whistle、charles、sys-debugger,但是我觉得sys-debugger上手简单，功能强大，使用方便，在这整理下安装及使用的方法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.91pug.com/images/s2.png">
-<meta property="og:image" content="http://www.91pug.com/images/s3.png">
-<meta property="og:image" content="http://www.91pug.com/images/s1.png">
-<meta property="og:image" content="http://www.91pug.com/images/s4.png">
-<meta property="og:image" content="http://www.91pug.com/images/s5.png">
-<meta property="og:image" content="http://www.91pug.com/images/s6.png">
-<meta property="og:image" content="http://www.91pug.com/images/s7.png">
-<meta property="og:image" content="http://www.91pug.com/images/s8.png">
-<meta property="og:updated_time" content="2018-04-03T08:49:41.000Z">
+<meta property="og:image" content="http://www.91pug.com/images/s9@2x.png">
+<meta property="og:image" content="http://www.91pug.com/images/w1.jpeg">
+<meta property="og:image" content="http://www.91pug.com/images/w2.jpg">
+<meta property="og:updated_time" content="2018-06-29T09:33:44.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018年Node.js开发框架介绍,待补充！">
-<meta name="twitter:description" content="本文通过star数，简介，示例代码，官方文档，对每个框架进行整理介绍">
-<meta name="twitter:image" content="http://www.91pug.com/images/s2.png">
+<meta name="twitter:title" content="sys-debugger工具推荐，微信调试，h5页面真机调试及页面抓包必备佳品">
+<meta name="twitter:description" content="网上有很多真机调试、页面抓包的工具，比如whistle、charles、sys-debugger,但是我觉得sys-debugger上手简单，功能强大，使用方便，在这整理下安装及使用的方法">
+<meta name="twitter:image" content="http://www.91pug.com/images/s9@2x.png">
     
 
     
@@ -200,7 +194,7 @@
 </aside>
 
             
-            <section id="main"><article id="post-4-3-1" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-6-29" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -208,7 +202,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            2018年Node.js开发框架介绍,待补充！
+            sys-debugger工具推荐，微信调试，h5页面真机调试及页面抓包必备佳品
         </h1>
     
 
@@ -217,24 +211,14 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/03/4-3-1/">
-            <time datetime="2018-04-03T06:37:12.000Z" itemprop="datePublished">2018-04-03</time>
+        <a href="/2018/06/29/6-29/">
+            <time datetime="2018-06-29T07:26:46.000Z" itemprop="datePublished">2018-06-29</time>
         </a>
     </div>
 
 
                         
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Node/">Node</a>
-    </div>
-
                         
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node/">Node</a>
-    </div>
-
                     </div>
                 
             </header>
@@ -243,18 +227,19 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>本文通过star数，简介，示例代码，官方文档，对每个框架进行整理介绍<a id="more"></a></p>
-<h2 id="一-Exrepss"><a href="#一-Exrepss" class="headerlink" title="一.Exrepss"></a>一.Exrepss</h2><h4 id="star数"><a href="#star数" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s2.png" alt=""><br>Express 是一个基于 Node.js 平台的极简、灵活的 web 应用开发框架，它提供一系列强大的特性，帮助你创建各种 Web 和移动设备应用。它是Node.js最基础的后端框架，因为太基础，所以构建一个 app 仍需要写很多脚手架代码，于是在它们基础之上出现了很多其他框架来减少编写这类代码。Express 应该是装机量最多的</p>
-<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var express = require(<span class="string">'express'</span>)</span><br><span class="line">var app = express()</span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="keyword">function</span> (req, res) &#123;</span><br><span class="line">  res.send(<span class="string">'Hello World'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(3000)</span><br></pre></td></tr></table></figure>
-<h4 id="官方文档-http-www-expressjs-com-cn"><a href="#官方文档-http-www-expressjs-com-cn" class="headerlink" title="官方文档: http://www.expressjs.com.cn"></a>官方文档: <a href="http://www.expressjs.com.cn" target="_blank" rel="noopener">http://www.expressjs.com.cn</a></h4><h2 id="二-Koa"><a href="#二-Koa" class="headerlink" title="二.Koa"></a>二.Koa</h2><h4 id="star数-1"><a href="#star数-1" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s3.png" alt=""><br>Koa 是下一代的 Node.js 的 Web 框架。由 Express 团队设计。旨在提供一个更小型、更富有表现力、更可靠的 Web 应用和 API 的开发基础。<br>Koa可以通过生成器摆脱回调，极大地改进错误处理。Koa核心不绑定任何中间件，但提供了优雅的一组可以快速和愉悦地编写服务器应用的方法。 相比Express，它使用的技术更新颖，例如 promises 和 async function，不再有回调函数嵌套的问题了。</p>
-<h4 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var koa = require(<span class="string">'koa'</span>);</span><br><span class="line">var app = koa();</span><br><span class="line">// logger</span><br><span class="line">app.use(<span class="keyword">function</span> *(next)&#123;</span><br><span class="line">  var start = new Date;</span><br><span class="line">  yield next;</span><br><span class="line">  var ms = new Date - start;</span><br><span class="line">  console.log(<span class="string">'%s %s - %s'</span>, this.method, this.url, ms);</span><br><span class="line">&#125;);</span><br><span class="line">// response</span><br><span class="line">app.use(<span class="keyword">function</span> *()&#123;</span><br><span class="line">  this.body = <span class="string">'Hello World'</span>;</span><br><span class="line">&#125;);</span><br><span class="line">app.listen(3000);</span><br></pre></td></tr></table></figure>
-<h4 id="官方文档-https-koa-bootcss-com"><a href="#官方文档-https-koa-bootcss-com" class="headerlink" title="官方文档: https://koa.bootcss.com"></a>官方文档: <a href="https://koa.bootcss.com" target="_blank" rel="noopener">https://koa.bootcss.com</a></h4><h2 id="三-Egg-js"><a href="#三-Egg-js" class="headerlink" title="三.Egg.js"></a>三.Egg.js</h2><h4 id="star数-2"><a href="#star数-2" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s1.png" alt=""><br>阿里巴巴开源 (据说不是一个 KPI 开源项目) 的 Egg.js，号称为企业级框架和应用而生。它有点像 Feathers，但是基于 Koa；另外不像 Feathers，Egg 没有自带认证功能，使用 cookie/session 鉴权。感觉是一个不错的企业级 Node.js 框架。理念先进，功能也全。</p>
-<h4 id="官方文档-http-eggjs-org-zh-cn"><a href="#官方文档-http-eggjs-org-zh-cn" class="headerlink" title="官方文档: http://eggjs.org/zh-cn/"></a>官方文档: <a href="http://eggjs.org/zh-cn/" target="_blank" rel="noopener">http://eggjs.org/zh-cn/</a></h4><h2 id="四-Sail-js"><a href="#四-Sail-js" class="headerlink" title="四.Sail.js"></a>四.Sail.js</h2><h4 id="star数-3"><a href="#star数-3" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s4.png" alt=""><br>Sails.js 就像是 Node.js 平台上的 Rails 框架。这是一个可靠可伸缩的开发框架，面向服务的架构，提供数据驱动的 API 集合。用来开发多玩家游戏、聊天应用和实时面板引用非常方便，也可用于开发企业级 Node.js 应用。<br>Sails.js 基于 <code>Node.js</code>, <code>Connect</code>, <code>Express</code> 和 <code>Socket.io</code> 构建。<br>控制器示例代码：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  hi: <span class="keyword">function</span> (req, res) &#123;</span><br><span class="line">    <span class="built_in">return</span> res.send(<span class="string">"Hi there!"</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">bye</span>: <span class="keyword">function</span> (req, res) &#123;</span><br><span class="line">    <span class="built_in">return</span> res.redirect(<span class="string">"http://www.OSChina.net"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h4 id="官方文档-https-sailsjs-com"><a href="#官方文档-https-sailsjs-com" class="headerlink" title="官方文档: https://sailsjs.com"></a>官方文档: <a href="https://sailsjs.com" target="_blank" rel="noopener">https://sailsjs.com</a></h4><h2 id="五-Meteor"><a href="#五-Meteor" class="headerlink" title="五.Meteor"></a>五.Meteor</h2><h4 id="star数-4"><a href="#star数-4" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s5.png" alt=""><br>Meteor 是一组新的技术用于构建高质量的 Web 应用，提供很多现成的包，可直接在浏览器或者云平台中运行。<br>Meteor 是一个有点 ‘异类’ 的全栈框架。首先它前后端通信使用 WebSocket 而不是 HTTP，所以实时性很好，但它不是一个 REST 框架，虽然可以通过简单的改造，提供 RESTful API；第二 Meteor 绑定了 MongoDB，让喜爱关系型数据库的同学爱不起来。</p>
-<h4 id="官方文档-https-www-meteor-com"><a href="#官方文档-https-www-meteor-com" class="headerlink" title="官方文档: https://www.meteor.com"></a>官方文档: <a href="https://www.meteor.com" target="_blank" rel="noopener">https://www.meteor.com</a></h4><h2 id="六-Hapi"><a href="#六-Hapi" class="headerlink" title="六.Hapi"></a>六.Hapi</h2><h4 id="star数-5"><a href="#star数-5" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s6.png" alt=""><br>Hapi.js 是一个用来构建基于 Node.js 的应用和服务的富框架，使得开发者把重点放在便携可重用的应用逻辑而不是构建架构。内建输入验证、缓存、认证和其他 Web 应用开发常用的功能。它是构建 RESTful 服务的框架，适合后端是微服务的架构，来自沃尔玛团队</p>
-<h4 id="官方文档-https-hapijs-com"><a href="#官方文档-https-hapijs-com" class="headerlink" title="官方文档: https://hapijs.com"></a>官方文档: <a href="https://hapijs.com" target="_blank" rel="noopener">https://hapijs.com</a></h4><h2 id="七-Mean-js"><a href="#七-Mean-js" class="headerlink" title="七.Mean.js"></a>七.Mean.js</h2><h4 id="star数-6"><a href="#star数-6" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s7.png" alt=""><br>一种全栈 Javascript 开发架构，它的名称来自于：MongoDB，Express，Angular，Node。</p>
-<h4 id="官方文档-http-meanjs-org"><a href="#官方文档-http-meanjs-org" class="headerlink" title="官方文档: http://meanjs.org"></a>官方文档: <a href="http://meanjs.org" target="_blank" rel="noopener">http://meanjs.org</a></h4><h2 id="八-KeystoneJS"><a href="#八-KeystoneJS" class="headerlink" title="八.KeystoneJS"></a>八.KeystoneJS</h2><h4 id="star数-7"><a href="#star数-7" class="headerlink" title="star数"></a>star数</h4><p><img src="../../../../images/s8.png" alt=""><br>KeystoneJS 是一个 CMS 框架，有点像 PHP 的Drupal，功能全面，适合做后台管理，内容管理。自带的用户管理功能很方便。</p>
-<h4 id="官方文档-http-keystonejs-com-zh-getting-started"><a href="#官方文档-http-keystonejs-com-zh-getting-started" class="headerlink" title="官方文档: http://keystonejs.com/zh/getting-started/"></a>官方文档: <a href="http://keystonejs.com/zh/getting-started/" target="_blank" rel="noopener">http://keystonejs.com/zh/getting-started/</a></h4>
+            <p>网上有很多真机调试、页面抓包的工具，比如whistle、charles、sys-debugger,但是我觉得sys-debugger上手简单，功能强大，使用方便，在这整理下安装及使用的方法<a id="more"></a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install spy-debugger -g</span><br></pre></td></tr></table></figure>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p>手机和电脑保持在同一网络下（比如同时连接一个WIFI下）</p>
+<h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p>终端命令行输入spy-debugger start，然后在网页中输入127.0.0.1:65165<br><img src="../../../../images/s9@2x.png" alt=""></p>
+<h4 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h4><p>设置手机的HTTP代理，代理IP地址设置为PC的IP地址,端口为spy-debugger的启动端口(默认端口：9888)。<br><img src="../../../../images/w1.jpeg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Android设置代理步骤：设置 - WLAN - 长按选中网络 - 修改网络 - 高级 - 代理设置 - 手动</span><br><span class="line">iOS设置代理步骤：设置 - 无线局域网 - 选中网络 - HTTP代理手动</span><br></pre></td></tr></table></figure></p>
+<h4 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h4><p>手机安装证书,找到文件夹node-mitmproxy(该文件夹是安装sys-debugger时生成的，位于/User下)，然后将node-mitmproxy.ca.crt文件放到手机里，进行安装<br><img src="../../../../images/w2.jpg" alt=""></p>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><p>通过上面的设置，这个时候我们可以用手机访问h5页面了，然后在电脑上127.0.0.1:65165地址查看手机访问页的请求、dom结构等</p>
+<h3 id="终端命令行自定义选项"><a href="#终端命令行自定义选项" class="headerlink" title="终端命令行自定义选项"></a>终端命令行自定义选项</h3><h4 id="端口（-默认端口：9888-）"><a href="#端口（-默认端口：9888-）" class="headerlink" title="端口（(默认端口：9888)）"></a>端口（(默认端口：9888)）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-debugger -p 8888</span><br></pre></td></tr></table></figure>
+<h4 id="设置外部代理（默认使用AnyProxy）"><a href="#设置外部代理（默认使用AnyProxy）" class="headerlink" title="设置外部代理（默认使用AnyProxy）"></a>设置外部代理（默认使用AnyProxy）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-debugger -e http://127.0.0.1:8888</span><br></pre></td></tr></table></figure>
+<h4 id="设置页面内容为可编辑模式-该功能使页面内容修改更加直观方便。-默认：-false"><a href="#设置页面内容为可编辑模式-该功能使页面内容修改更加直观方便。-默认：-false" class="headerlink" title="设置页面内容为可编辑模式(该功能使页面内容修改更加直观方便。 (默认： false))"></a>设置页面内容为可编辑模式(该功能使页面内容修改更加直观方便。 (默认： false))</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-debugger -w <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="是否只拦截浏览器发起的https请求-默认为true"><a href="#是否只拦截浏览器发起的https请求-默认为true" class="headerlink" title="是否只拦截浏览器发起的https请求(默认为true)"></a>是否只拦截浏览器发起的https请求(默认为true)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-debugger -b <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>有些浏览器发出的connect请求没有正确的携带userAgent，这个判断有时候会出错，如UC浏览器。这个时候需要设置为false。大多数情况建议启用默认配置：true，由于目前大量App应用自身（非WebView）发出的请求会使用到SSL pinning技术，自定义的证书将不能通过app的证书校验。</p>
+<h4 id="是否允许HTTP缓存-默认为false"><a href="#是否允许HTTP缓存-默认为false" class="headerlink" title="是否允许HTTP缓存(默认为false)"></a>是否允许HTTP缓存(默认为false)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spy-debugger -c <span class="literal">true</span></span><br></pre></td></tr></table></figure>
         
         </div>
         <footer class="article-footer">
@@ -264,7 +249,7 @@
 
 </div>
 
-    <a data-url="http://www.91pug.com/2018/04/03/4-3-1/" data-id="cjizs6jyv000sk4et1yl9nkyv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://www.91pug.com/2018/06/29/6-29/" data-id="cjizs6jzf001fk4etk84s4qmi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -339,19 +324,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/04/09/4-9-1/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    知乎live分享-狼叔：如何正确的学习Node.js
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/03/30/3-30-1/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/06/11/6-11/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">移动端h5网站搭建框架推荐</div>
+            <div class="article-nav-title">mongodb使用过程中的一些报错</div>
         </a>
     
 </nav>
